@@ -1,9 +1,20 @@
 * {
 	box-sizing: border-box;
-	.mySlides {display: none}
-	img {vertical-align: middle}
-	.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
-	img {vertical-align: middle;}
+	.mySlides {
+		display: none;
+	}
+	img {
+		vertical-align: middle;
+	}
+	.mySlides1,
+	.mySlides2,
+	.mySlides3,
+	.mySlides4 {
+		display: none;
+	}
+	img {
+		vertical-align: middle;
+	}
 }
 
 body {
@@ -18,7 +29,7 @@ body {
 	font-family: Stencil;
 	padding: 0px;
 	text-align: center;
-	background: rgba(37, 82, 130, 0.);
+	background: rgba(37, 82, 130, 0);
 	color: white;
 	text-shadow: -1px 0 red, 0 1px black, 1px 0 black, 0 -1px black;
 	text-shadow: 2px 2px 4px #000000;
@@ -28,68 +39,80 @@ body {
 	font-size: 50px;
 }
 
-/* Style the topnav sticky */
-ul {
-	list-style-type: none;
+/* Reset some default styles */
+ul,
+li {
+	list-style: none;
 	margin: 0;
 	padding: 0;
-	background-color: rgba(.0, .0, .0, .5);
-	position: -webkit-sticky; /*Safari*/
+}
+
+/* Style for the navigation bar */
+.navbar {
+	background-color: #333;
+	display: inline-block;
+	justify-content: space-between;
+	padding: 10px;
 	position: sticky;
 	top: 0;
+	z-index: 4;
 }
 
-li {
-	float: left;
-}
-
-.dropbtn {
-	cursor: pointer;
-}
-
- li a, .dropdown-content, .dropbtn {
-	display: block;
+.navbar a {
 	color: white;
-	text-align: center;
-	padding: 5px 6px;
 	text-decoration: none;
-	background-color: rgba(0, 0, 0, 0.5);
-  }
+	padding: 10px;
+}
 
-  li a:hover, .dropdown:hover .dropbtn {
-	background-color: rgba(0, 0, 0, 0.8);
-  }
+/* Style for the main menu items */
+.navbar ul li {
+	display: inline;
+	position: relative;
+}
 
-  .dropdown {
-	display: block;
-  }
-  
-  .dropdown-content {
+/* Style for dropdowns */
+.dropdown {
+	position: relative;
+}
+
+/* Style for dropdown content */
+.dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: rgba(.0, .0, .0, .9);
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
-	z-index: 9999;
-  }
-  
-  .dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-  }
-
-.dropdown-content a:hover {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: #333;
+	min-width: 110px;
+	z-index: 1;
+	left: 0;
+	padding: 5px;
+	margin-top: 10px; /* Add top space here */
 }
 
+/* Style for dropdown on hover */
 .dropdown:hover .dropdown-content {
 	display: block;
-	z-index: 9999;
-  }
+}
+
+/* Style for submenu */
+.submenu {
+	display: none;
+	position: absolute;
+	background-color: #333;
+	min-width: 160px;
+	z-index: 1;
+}
+.submenu a {
+	white-space: nowrap;
+}
+
+/* Show the submenu on hover */
+.dropdown-content li:hover .submenu {
+	display: block;
+	left: 100%; /* Adjust this value as needed */
+	top: 0;
+}
+.navbar a:hover {
+	color: red;
+}
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -102,13 +125,12 @@ li {
 	border-color: rgba(30, 30, 30, 0.7);
 	border-width: 10px;
 	border-radius: 20px;
-	
 }
 
 /* Add a card effect for articles */
 .kraken {
 	max-width: 100%;
-	background-color: rgba(.0, .0, .0, 0.0);
+	background-color: rgba(0, 0, 0, 0);
 	padding-left: 15%;
 	padding-right: 15%;
 	padding-bottom: 5%;
@@ -126,7 +148,7 @@ li {
 	float: left;
 	width: 30%;
 	height: 1080px;
-	background-color: rgba(0.0, 0.0, 0.0, 0.0);
+	background-color: rgba(0, 0, 0, 0);
 	padding-left: 0px;
 	padding-top: 0px;
 	border-style: solid;
@@ -135,20 +157,20 @@ li {
 	border-radius: 20px;
 	position: -webkit-sticky; /*Safari*/
 	position: sticky;
-} -->
+}
+-->
 
 /* Add a card effect for articles */
 .card {
-	background-color: rgba(.0, .0, .0, 0.0);
+	background-color: rgba(0, 0, 0, 0);
 	padding: 0px;
 	margin-top: 20px;
 	color: white;
 	text-align: center;
-		
 }
 /* Add a card effect for articles */
 .card2 {
-	background-color: rgba(.0, .0, .0, 0.0);
+	background-color: rgba(0, 0, 0, 0);
 	padding: 0px;
 	margin-top: 20px;
 	color: white;
@@ -163,7 +185,7 @@ li {
 .card3 {
 	max-width: 100%;
 	max-height: 90%;
-	background-color: rgba(.0, .0, .0, 0.0);
+	background-color: rgba(0, 0, 0, 0);
 	padding-left: 1%;
 	padding-right: 1%;
 	padding-bottom: 5%;
@@ -175,22 +197,21 @@ li {
 	border-width: 10px;
 	border-radius: 20px;
 	z-index: 3;
-	
 }
 
 /* Floating card center*/
 .card4 {
 	float: center;
 	max-width: 99.9%;
-	
+
 	min-width: 300px;
 	max-height: 1340px;
-	background-color: rgba(.0, .0, .0, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	padding-left: 1%;
 	padding-right: 1%;
 	padding-bottom: 1%;
 	padding-top: 10px;
-	
+
 	color: white;
 	text-align: center;
 	border-style: none;
@@ -204,7 +225,7 @@ li {
 	float: right;
 	max-width: 49%;
 	max-height: 90%;
-	background-color: rgba(.0, .0, .0, 0.0);
+	background-color: rgba(0, 0, 0, 0);
 	padding-left: 1%;
 	padding-right: 1%;
 	padding-bottom: 5%;
@@ -221,24 +242,24 @@ li {
 .footer {
 	padding: 20px;
 	text-align: center;
-	background: rgba(0.0, 0.0, 0.0, 0.0);
+	background: rgba(0, 0, 0, 0);
 	margin-top: 20px;
 	color: white;
 }
 
 /* Different color text*/
-	.redText {
-		color:red
-	}
-	.blueText {
-		color:blue
-	}
-	.greenText {
-		color:forestgreen
-	}
-
+.redText {
+	color: red;
+}
+.blueText {
+	color: blue;
+}
+.greenText {
+	color: forestgreen;
+}
+/*doesnt do anything-huhu72*/
 /* Link Styling */
-a:link {
+/* a:link {
 	color: white;
 	text-decoration: none;
 }
@@ -246,11 +267,9 @@ a:link {
 a:visited {
 	color: grey;
 	text-decoration: none;
-
-}
+} */
 
 a:hover {
-	font-size: 110%;
 	text-decoration: none;
 	color: red;
 }
@@ -264,19 +283,17 @@ a:hover {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	overflow-y: scroll;
-	
 }
 
 /*Landing Page Scrollbar*/
 .landing::-webkit-scrollbar {
 	display: none;
-
 }
 
 .profileCard {
 	float: center;
 	color: white;
-	box-shadow: 0 4px 8px 0 rgba( 255, 255, 255, 0.4);
+	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.4);
 	border-radius: 20px;
 	border: hidden;
 	padding-top: 10px;
@@ -287,7 +304,7 @@ a:hover {
 	margin: auto;
 	text-align: center;
 	font-family: Stencil;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Slideshow container */
@@ -299,7 +316,8 @@ a:hover {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
@@ -314,8 +332,6 @@ a:hover {
 	user-select: none;
 }
 
-
-
 /* Position the "next button" to the right */
 .prev {
 	left: 0;
@@ -329,9 +345,10 @@ a:hover {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-	background-color: rgba(255,0,0,0.8);
-	font-size:100px;
+.prev:hover,
+.next:hover {
+	background-color: rgba(255, 0, 0, 0.8);
+	font-size: 100px;
 }
 
 /* Caption text */
@@ -366,8 +383,9 @@ a:hover {
 	transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-		background-color: red;
+.active,
+.dot:hover {
+	background-color: red;
 }
 
 /* Fading animation */
@@ -378,18 +396,19 @@ a:hover {
 
 @keyframes fade {
 	from {
-		opacity: .4
+		opacity: 0.4;
 	}
 
 	to {
-		opacity: 1
+		opacity: 1;
 	}
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-	.prev, .next, .text {
-		font-size: 11px
+	.prev,
+	.next,
+	.text {
+		font-size: 11px;
 	}
 }
-
