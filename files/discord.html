@@ -23,34 +23,44 @@
 </head>
 <!--Load SlideShow-->
 <body onload="showSlides(1, 0), showSlides(1, 1), showSlides(1, 2), showSlides(1, 3)">
-    <!--  Attempt at autoslides, needs work.
-    <script>
-    for (let i = 1; i < 3, i++) {
-            setTimeout(function timer() {
-                showSlides(i);
-            }, i * 5000);
-        }</script> -->
-    <ul>
-        <li><a class="active" href="http://www.lddrako.com">Home</a></li>
-        <!--    <li><a href="#news">News</a></li>
-            <li><a href="#guides">Guides</a></li> -->
-        <li class="dropdown">
-            <a href="javascript:void" class="dropbtn">Websites</a>
-            <div class="dropdown-content">
-                <a href="https://status.robertsspaceindustries.com/" target="_blank">Star Citizen Status</a>
-                <a href="https://verseguide.com/" target="_blank">Verse Guide</a>
-                <a href="https://www.erkul.games/live/calculator" target="_blank">Erkul Calculator</a>
-                <a href="https://sc-trade.tools/home" target="_blank">SC Trade Tools</a>
-                <a href="https://uexcorp.space/" target="_blank">UEX Trade Hub</a>
-                <a href="https://redmonstergaming.com/" target="_blank">Mining Cheat Sheets</a>
-                <a href="https://hangar.link/" target="_blank">Hangar Link/Fleet Viewer</a>
-                <a href="https://finder.cstone.space/" target="_blank">Cornerstone</a>
-                <a href="https://support.robertsspaceindustries.com/hc/en-us/articles/360003093114-Loaner-Ship-Matrix#:~:text=The%20concept%20of%20%22ship%20loaners%22%20was%20introduced%20to,substitute%22%20for%20the%20ship%20that%20isn%27t%20flight%20ready." target="_blank">Star Citizen Ship Loaner Matrix</a>
-                <a href="https://robertsspaceindustries.com/starmap" target="_blank">Star Citizen Star Map</a>
-                <a href="https://issue-council.robertsspaceindustries.com/" target="_blank">Issue Council</a>
-                <a href="https://robertsspaceindustries.com/spectrum/community/SC" target="_blank">CIG Spectrum</a>
-            </div>
-        </li>
+    <div class="navbar">
+        <ul>
+            <li><a href="http://www.lddrako.com" target="lddrako.com">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Resources</a>
+                <ul class="dropdown-content">
+                    <li>
+                        <a href="#">Official</a>
+                        <ul class="submenu">
+                            <li><a href="https://status.robertsspaceindustries.com/" target="_blank">Star Citizen Status</a></li>
+                            <li><a href="https://robertsspaceindustries.com/spectrum/community/SC" target="_blank">CIG Spectrum</a></li>
+                            <li><a href="https://support.robertsspaceindustries.com/hc/en-us/articles/360003093114-Loaner-Ship-Matrix#:~:text=The%20concept%20of%20%22ship%20loaners%22%20was%20introduced%20to,substitute%22%20for%20the%20ship%20that%20isn%27t%20flight%20ready." 
+                                target="_blank">Loaner Ship Matrix</a></li>
+                            <li><a href="https://robertsspaceindustries.com/spectrum/guide" target="_blank">Guide Hub</a></li>
+                            <!-- Add more official links here -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Tools</a>
+                        <ul class="submenu">
+                            <li><a href="https://verseguide.com/" target="_blank">Verse Guide</a></li>
+                            <li><a href="https://www.erkul.games/live/calculator" target="_blank">Erkul Calculator</a></li>
+                            <li><a href="https://hangar.link/" target="_blank">Fleet Viewer</a></li>
+                            <li><a href="https://sc-trade.tools/home" target="_blank">SC Trade Tools</a></li>
+                            <li><a href="https://uexcorp.space/" target="_blank">UEX Corp</a></li>
+                            <li><a href="https://redmonstergaming.com/mining-cheat-sheets/" target="_blank">Red Monster Mining</a></li>
+                            <li><a href="https://finder.cstone.space/" target="_blank">Cornerstone Item Finder</a></li>
+                            <li><a href="https://starcitizen.tools/" target="_blank">Star Citizen WIKI</a></li>
+                            <li><a href="https://snareplan.dolus.eu/" target="_blank">Dolus SnarePlan</a></li>
+                            <!-- Add more tools links here -->
+                        </ul>
+                    </li>
+                    <li><a href="files/discord.html" target="_blank">Discord</a></li>
+                </ul>
+            </li>
+            <li style="float: inline-end"><a href="#profileCard">Contact</a></li>
+        </ul>
+    </div>
         <li style="float:right"><a href="#profileCard">Contact</a></li>
     </ul>
 
