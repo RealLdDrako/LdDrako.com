@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../files/menu.css" />
 		<script src="../files/slideshow.js"></script>
 		<script src="../files/imageGenerator.js" type="text/javascript"></script>
+        <script src="../files/upload.js" type="text/javascript"></script>
 		<style>
 			body {
 				background-image: url('../images/background_softened_vintage.png');
@@ -61,6 +62,7 @@
                                 <li><a href="../files/OverDrive.html" target="_blank">Overdrive Initiative</a></li>
                             </ul>
                         </li>
+                        <li><a href="../files/upload.html" target="_blank">Upload to Around The Verse</a></li>
                         <li><a href="../files/discord.html" target="_blank">Discord</a></li>
                     </ul>
                 </li>
@@ -88,53 +90,21 @@
 				<img id="img" src="../images/random/image4.png" alt="Images from the verse" style="width: 100%;" />
 			</div>
 			<!--<img id="imageElement" src="" alt="Random Image">-->
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <label for="file">Select a file:</label>
-                <input type="file" name="userfile" id="file">
-                <button>Upload File</button>
+            <br>
+            <br>
+        <div class="centered">
+            <form action="upload.php" method="post" enctype="multipart/form-data" id="uploadForm">
+                Select image files to upload (JPEG, PNG, GIF only, max 25MB each):
+                <br>
+                <input type="file" name="files[]" id="files" multiple accept=".jpg,.jpeg,.png,.gif">
+                <br>
+                <progress id="progressBar" value="0" max="100" style="width: 300px;"></progress>
+                <h3 id="status"></h3>
+                <button type="button" onclick="uploadFile()">Upload Files</button>
             </form>
+        </div>    
 		</div>
-
-		<div style="overflow: auto">
-			<div class="centered">
-				<h1><a href="https://www.youtube.com/playlist?list=PLnfgbAY8rOdG7QAPkEkuFYWhXztOQsMeg" target="_blank">LdDrako's Field Guide</a></h1>
-				<div class="slideshow-container">
-					<div class="mySlides2">
-						<iframe width="100%" height="600" src="https://www.youtube.com/embed/uKS8TOX7_68?si=lAJtgSW2hUwPRJdm" title="YouTube video player - LdDrako shows a beginner's guide to 60k bunkers in Star Citizen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					</div>
-
-					<div class="mySlides2">
-						<iframe width="100%" height="600" src="https://www.youtube.com/embed/QR_WmsBsRS8?si=35mAniwEgY_ETPto" title="YouTube video player - Crusader Elites, is their armor worth the trouble?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					</div>
-
-					<div class="mySlides2">
-						<iframe width="100%" height="600" src="https://www.youtube.com/embed/e87yhXppRCQ?si=tvFMR-hzWWS0Lvsz" title="YouTube video player - Taking Down Comms Star Citizen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					</div>
-
-					<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-				</div>
-			</div>
-			<div class="centered">
-				<h1><a href="https://www.youtube.com/@StantonToday/featured" target="_blank">Stanton Today</a></h1>
-				<div class="slideshow-container">
-					<div class="mySlides1">
-						<iframe width="100%" height="600" src="https://www.youtube.com/embed/lbKeqPOwqLk?si=454v-d8PkGvE3k9m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					</div>
-
-					<div class="mySlides1">
-						<iframe width="100%" height="600" src="https://www.youtube.com/embed/kMBcgqs6MNI?si=Lm_d4zwUnmOUqPsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>					
-					</div>
-
-					<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-				</div>
-			</div>
-			<div class="centered">
-				<h2>LdDrako's Twitter</h2>
-				<a class="twitter-timeline" data-height="1223" data-theme="dark" href="https://twitter.com/LdDrako?ref_src=twsrc%5Etfw">Tweets by LdDrako</a>
-				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			</div>
+        <div>
 
 			<div class="profile" id="profileCard">
 				<h2>About me</h2>
@@ -174,6 +144,6 @@
 		<div class="footer">
 			<h2>LdDrako.com</h2>
 			<p>LdDrako.com™, related images, and products are trademarked by LdDrako™</p>
-<!--		</div> -->
+		</div>
     </body>
 </html>
