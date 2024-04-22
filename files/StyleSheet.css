@@ -127,6 +127,9 @@ li {
 	border-radius: 20px;
 }
 
+.centered
+	border-radius: 20px;
+
 /* Add a card effect for articles */
 .kraken {
 	max-width: 100%;
@@ -309,11 +312,18 @@ a:hover {
 
 /* Slideshow container */
 .slideshow-container {
-	max-width: 99%;
+	max-width: 98%;
 	position: relative;
 	margin: auto;
 	z-index: 3;
+	border-radius: 20px;
 }
+
+#slideshowImage {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
 
 /* Next & previous buttons */
 .prev,
