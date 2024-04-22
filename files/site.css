@@ -92,6 +92,23 @@ body {
 	border-radius: 20px;
 }
 
+/* Right column */
+/* .rightcolumn {
+	float: left;
+	width: 30%;
+	height: 1080px;
+	background-color: rgba(0, 0, 0, 0);
+	padding-left: 0px;
+	padding-top: 0px;
+	border-style: solid;
+	border-color: rgba(30, 30, 30, 0.7);
+	border-width: 10px;
+	border-radius: 20px;
+	position: -webkit-sticky; 
+	position: sticky;
+}
+*/
+
 /* Footer */
 .footer {
 	padding: 20px;
@@ -201,6 +218,12 @@ a:hover {
 .active,
 .dot:hover {
 	background-color: red;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
 }
 
 @keyframes fade {
