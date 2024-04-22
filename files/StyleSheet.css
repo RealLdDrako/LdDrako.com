@@ -127,8 +127,9 @@ li {
 	border-radius: 20px;
 }
 
-.centered
+.centered {
 	border-radius: 20px;
+}
 
 /* Add a card effect for articles */
 .kraken {
