@@ -127,9 +127,41 @@ li {
 	border-radius: 20px;
 }
 
+/* Rounds centered cards */
 .centered {
 	border-radius: 20px;
 }
+
+/* Styling for the upload form */
+.uploadForm {
+	border-radius: 20px;
+	opacity: 0.5;
+	background-color: #000000;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.uploadForm form {
+	text-align: center;
+	color: white;
+	font-size: 20px; /* adjust size as needed */
+}
+
+.uploadForm input[type="file"],
+.uploadForm button {
+	width: 100%;
+	max-width: 300px; /* or any width you prefer */
+}
+
+.uploadForm button {
+	background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+	color: white;
+}
+
+
 
 /* Add a card effect for articles */
 .kraken {
@@ -148,7 +180,7 @@ li {
 }
 
 /* Right column */
-<!-- .rightcolumn {
+ .rightcolumn {
 	float: left;
 	width: 30%;
 	height: 1080px;
@@ -162,7 +194,6 @@ li {
 	position: -webkit-sticky; /*Safari*/
 	position: sticky;
 }
--->
 
 /* Add a card effect for articles */
 .card {

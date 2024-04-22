@@ -1,0 +1,108 @@
+.uploadForm {
+	float: center;
+	color: white;
+	border: hidden;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	max-width: 99.9%;
+	min-width: 350px;
+	width: 50%;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+	font-family: Stencil;
+	background-color: transparent;
+}
+
+.uploadForm form {
+	text-align: center;
+	color: white;
+	font-size: 20px; /* adjust size as needed */
+	font-family: Stencil;
+}
+
+.uploadForm input[type="file"] {
+    display: none; /* hide the default file input */
+}
+
+.uploadForm label {
+    display: inline-block;
+    padding: 10px 20px; /* adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+    color: white;
+    font-family: Stencil;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* smooth transition */
+    border-radius: 12px; /* chamfered edges */
+    border: 2px solid #000; /* add border */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), /* shadow for 3D effect */
+                -2px -2px 5px rgba(255, 255, 255, 0.1); /* light effect from top left */
+    margin-bottom: 10px; /* add space below the button */
+}
+
+.uploadForm label:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), /* darker shadow on hover */
+                -2px -2px 5px rgba(255, 255, 255, 0.2); /* brighter light effect on hover */
+}
+
+.uploadForm label:active {
+    transform: translate(1px, 1px); /* move button slightly on click */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), /* even darker shadow on click */
+                -1px -1px 2px rgba(255, 255, 255, 0.3); /* even brighter light effect on click */
+    background-color: red; /* red when clicked */
+}
+
+
+
+.uploadForm button {
+    padding: 10px 20px; /* adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+    color: white;
+    font-family: Stencil;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* smooth transition */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* shadow for 3D effect */
+    border-radius: 12px; /* chamfered edges */
+}
+
+.uploadForm button:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* darker shadow on hover */
+}
+
+.uploadForm button:active {
+    transform: translate(1px, 1px); /* move button slightly on click */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* even darker shadow on click */
+    background-color: red; /* red when clicked */
+}
+
+.uploadForm form p {
+    font-size: 24px; /* adjust size as needed */
+}
+
+/* Style the progress container */
+.uploadForm progress {
+    width: 75%;
+    height: 20px; /* adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+    border: none; /* remove default border */
+    border-radius: 12px; /* chamfered edges */
+    appearance: none; /* remove default appearance */
+    -webkit-appearance: none; /* remove default appearance for Chrome and Safari */
+    margin-top: 10px; /* add space above the progress bar */
+}
+
+/* Style the progress bar */
+.uploadForm progress::-webkit-progress-bar {
+    background-color: rgba(0, 0, 0, 0.5); /* translucent black */
+    border-radius: 12px; /* chamfered edges */
+}
+
+.uploadForm progress::-webkit-progress-value {
+    background-color: red; /* red */
+    border-radius: 12px; /* chamfered edges */
+}
+
+.uploadForm progress::-moz-progress-bar {
+    background-color: red; /* red */
+    border-radius: 12px; /* chamfered edges */
+}
