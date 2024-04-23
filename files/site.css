@@ -59,6 +59,18 @@ body {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 
+.profile img[src='../images/BalrogPortrait.png'] {
+    border-radius: 20px;
+}
+
+.profile img[src='images/BalrogPortrait.png'] {
+    border-radius: 20px;
+}
+
+.profile img {
+    border-radius: 20px;
+}
+
 .centered {
 	float: center;
 	color: white;

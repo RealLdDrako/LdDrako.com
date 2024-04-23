@@ -1,0 +1,46 @@
+
+    .alignLeft {
+        float: center;
+        color: rgb(255, 255, 255);
+        border: hidden;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-width: 99.9%;
+        min-width: 350px;
+        width: 50%;
+        margin: auto;
+        margin-top: 20px;
+        text-align: left;
+        font-family: Stencil;
+        background-color: transparent;
+    }
+
+    .form-group label {
+        margin-bottom: 20px; 
+    }
+
+    .form-group input, .form-group textarea {
+        width: 100%;
+        box-sizing: content-box;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        font-family: Stencil;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: rgb(255, 255, 255);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .fullscreen {
+        position: fixed;
+        top: 10%;
+        left: 10%;
+        width: 50%;
+        max-width: 80%;
+        height: 80%;
+        z-index: 9999;
+        padding: 0;
+        border: 0;
+    }
