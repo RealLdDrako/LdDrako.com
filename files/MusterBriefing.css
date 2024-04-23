@@ -33,6 +33,24 @@
         font-size: 20px;
     }
 
+    .form-group button {
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        font-family: Stencil;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: rgb(255, 255, 255);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .form-group button:active {
+        background-color: red; /* Add this line */
+    }
+
     .fullscreen {
         position: fixed;
         top: 10%;
