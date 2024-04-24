@@ -1,3 +1,4 @@
+/*
 function submitForm() {
     var missionName = document.getElementById('missionName').value;
     var missionType = document.getElementById('missionType').value;
@@ -15,5 +16,5 @@ function submitForm() {
   
     // Redirect to the second page
     window.location.href = 'display.html';
-  }
-  
+}
+*/

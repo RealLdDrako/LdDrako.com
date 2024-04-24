@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "LdDrako";
-$password = "95j$Te*2@6QD";
+$password = "TFSJQEOkkuo?";
 $dbname = "missions";
 
 // Create connection
@@ -23,4 +23,3 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
-
