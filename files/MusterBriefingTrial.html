@@ -80,10 +80,15 @@
             <p>You can also follow the Den's<a href="../files/discord.html" target="_blank">Discord</a>.</p>
 		</div>
 
-		<div class="centered">
+		<div class="profile">
 			<h1>Make a new MISSION here!!!</h1>
 			<div class="alignLeft">
-				<form>
+				<form action="display.php" method="post">
+					<div class="form-group">
+						<label for="missionName">Mission Name:</label>
+						<br>
+						<input type="text" id="missionName" name="missionName">
+					</div>
 					<div class="form-group">
 						<label for="missionType">Mission Type:</label>
 						<br>
@@ -98,22 +103,17 @@
 						<label for="startTime">Start Time:</label>
 						<br>
 						<input type="datetime-local" id="startTime" name="startTime">
-					</div>
-					<div class="form-group">
-						<label for="location">Location:</label>
-						<br>
-						<input type="text" id="location" name="location">
-					</div>
 					<div class="form-group">
 						<label for="endTime">End Time:</label>
 						<br>
 						<input type="datetime-local" id="endTime" name="endTime">
 					</div>
-					<div class="form-group">
-						<label for="missionName">Mission Name:</label>
-						<br>
-						<input type="text" id="missionName" name="missionName">
-					</div>
+				</div>
+				<div class="form-group">
+					<label for="location">Location:</label>
+					<br>
+					<input type="text" id="location" name="location">
+				</div>
 					<div class="form-group">
 						<label for="missionText">Mission Information:</label>
 						<br>
@@ -172,5 +172,6 @@
 		<script src="../files/aroundTheVerse.js" type="text/javascript"></script>
 		<script src="../files/slideshow.js"></script>
 		<script src="../files/formFullScreen.js"></script>
+		<script src="../files/formMission.js"></script>
     </body>
 </html>

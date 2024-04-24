@@ -7,3 +7,12 @@ window.onload = function() {
         this.className = '';
     });
 };
+
+document.querySelector('.form-group textarea').addEventListener('fullscreenchange', (event) => {
+    if (document.fullscreenElement) {
+      document.querySelector('.form-group textarea').classList.add('fullscreen');
+    } else {
+      document.querySelector('.form-group textarea').classList.remove('fullscreen');
+    }
+  });
+
