@@ -1,0 +1,92 @@
+body::before {
+    content: "";
+    background-image: url('../images/background_softened_vintage.png');
+    background-position: center; /* This will center the background */
+    background-attachment: fixed; /* This will fix the background in the viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5; /* Adjust this value to change the transparency */
+    z-index: -1;
+}
+
+body {
+    background-color: rgb(255, 238, 145);
+    text-align: center;
+    max-width: 99.9%;
+    width: 8.5in; 
+    height: 10.75in; 
+    margin: 0 auto; 
+    overflow: auto;
+    page-break-inside: avoid;
+}
+
+.watermark {
+    opacity: 0.2;
+    position: absolute;
+    top: 1.5in; 
+    left: -1.25in; 
+    padding: 1mm;
+    transform: rotate(-90deg);
+    z-index: 999;
+    text-align: center;
+    max-width: 99.9;
+    color: rgba(255, 0, 0, 0.227);
+    font-size: 3em;
+}
+
+.watermark2 {
+    opacity: 0.2;
+    position: absolute;
+    bottom: 1.5in; 
+    right: -1.25in; 
+    padding: 1mm;
+    transform: rotate(90deg);
+    z-index: 999;
+    text-align: center;
+    max-width: 99.9;
+    color: rgba(255, 0, 0, 0.227);
+    font-size: 3em;
+}
+
+@media screen {
+    .watermark, .watermark2, .topnav {
+        display: none;
+    }
+}
+
+@media print {
+    .watermark, .watermark2, {
+        display: block;
+    }
+}
+
+.missionAttribute {
+    text-align: center;
+    max-width: 99.9%;
+    color: rgb(255, 0, 0);
+}
+
+.missionText {
+    text-align: center;
+    max-width: 99.9%;
+    color: rgb(40, 153, 17);
+}
+
+.missionType {
+    font-size: 0.8em; /* Adjust this value to change the size */
+}
+
+.missionName {
+    display: inline; /* This makes the h2 tag inline with the span tags */
+}
+
+
+@media print {
+    .topnav {
+        display: none;
+    }
+}
+

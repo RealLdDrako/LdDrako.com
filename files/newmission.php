@@ -10,18 +10,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../files/site.css" />
 		<link rel="stylesheet" href="../files/menu.css" />
-		<link rel="stylesheet" href="../files/missionTemplate.css" />
+		<link rel="stylesheet" href="../files/newmission.css" />
 		<script src="../files/upload.js" type="text/javascript"></script>
-		<style>
-			body {
-				
-				align-items: center;
-				background-color: rgb(163, 180, 108);
-			}
-		</style>
 	</head>
+	
 	<!--Load SlideShow-->
-	<body onload="showSlides(1, 0), showSlides(1, 1), showSlides(1, 2), showSlides(1, 3)">
+	<body>
 	<div class="topnav">
 		<ul>
 			<li class="subnav"><a href="http://www.lddrako.com" target="lddrako.com">Home</a></li>
@@ -65,13 +59,12 @@
 			<li><a href="#profileCard">Contact</a></li>
 		</ul>
 	</div>
-        <br>
         <!-- main content to be restructured for navbar improvements -->
-	<body>
-    <div class="body">
-		<h1>Mission Brief</h1>
+<body>
+    <div class="watermark">
+		<h4>Mission Brief</h4>
 	</div>
-	<?php
+<?php
 
 
 
@@ -107,27 +100,24 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-	
-	<div>
-		<h2><?php echo $missionName; ?></h2><br>
+<div class="page">
+	<div class="missionAttribute">
+    	<span class="missionType"><?php echo $missionType; ?> Mission-------></span>
+    	<h2 class="missionName"><?php echo $missionName; ?></h2>
+    	<span class="missionType"><-------<?php echo $missionType; ?> Mission</span>
 	</div>
-	<div>
-    <h2><?php echo $missionType; ?></h2>
+	<div class="missionAttribute">
+    	<h4>Start Time: <?php echo $startTime; ?>  End Time: <?php echo $endTime; ?></h4>
+	</div>
+	<div class="missionAttribute">
+    	<h2><?php echo $location; ?></h2>
+	</div>
+	<div class="missionText">
+    	<p><?php echo $missionText; ?></p>
+	</div>
 </div>
-<div>
-    <h2><?php echo $startTime; ?></h2>
-</div>
-<div>
-    <h2><?php echo $endTime; ?></h2>
-</div>
-<div>
-    <h2><?php echo $location; ?></h2>
-</div>
-<div>
-    <p><?php echo $missionText; ?></p>
-</div>
-	<div class="body">
-		<h1>Mission Brief</h1>
+	<div class="watermark2">
+		<h4>Mission Brief</h4>
 	</div>
 
 		<div class="footer">
