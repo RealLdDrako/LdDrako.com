@@ -8,10 +8,10 @@
 		<meta name="author" content="LdDrako" />
 		<meta http-equiv="refresh" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../files/site.css" />
-		<link rel="stylesheet" href="../files/menu.css" />
-		<link rel="stylesheet" href="../files/newmission.css" />
-		<script src="../files/upload.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="../css/site.css" />
+		<link rel="stylesheet" href="../css/menu.css" />
+		<link rel="stylesheet" href="../css/newmission.css" />
+		<script src="../script/upload.js" type="text/javascript"></script>
 	</head>
 	
 	<!--Load SlideShow-->
@@ -49,11 +49,11 @@
 					<li class="subnav">
 						<a href="#">Events</a>
 						<ul>
-							<li><a href="../files/OverDrive.html" target="_blank">Overdrive Initiative</a></li>
+							<li><a href="../pages/OverDrive.html" target="_blank">Overdrive Initiative</a></li>
 						</ul>
 					</li>
-					<li><a href="../files/upload.html" target="_blank">Upload to Around The Verse</a></li>
-					<li><a href="../files/discord.html" target="_blank">Discord</a></li>
+					<li><a href="../pages/upload.html" target="_blank">Upload to Around The Verse</a></li>
+					<li><a href="../pages/discord.html" target="_blank">Discord</a></li>
 				</ul>
 			</li>
 			<li><a href="#profileCard">Contact</a></li>
@@ -124,6 +124,6 @@ $conn->close();
 			<h2>LdDrako.com</h2>
 			<p>LdDrako.com™, related images, and products are trademarked by LdDrako™</p>
 		</div>
-		<script src="../files/missionTemplate.js"></script>
+		<script src="../script/missionTemplate.js"></script>
     </body>
 </html>

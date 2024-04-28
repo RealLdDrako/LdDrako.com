@@ -9,7 +9,7 @@ window.onload = function() {
         // Make an AJAX request to a server-side script (e.g., PHP)
         // that reads image filenames from the folder
         // and returns them as JSON data
-        fetch('../files/get_images.php') // Replace with your server-side script
+        fetch('../script/get_images.php') // Replace with your server-side script
             .then(response => response.json())
             .then(data => {
                 imageFiles = Object.values(data); // Convert object to array
