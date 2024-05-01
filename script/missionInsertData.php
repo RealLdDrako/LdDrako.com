@@ -17,6 +17,7 @@ VALUES ('".$_POST['missionName']."', '".$_POST['missionType']."', '".$_POST['sta
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
+  echo " <br><button onclick=\"location.href='../pages/newmission.php'\">Go to New Mission</button>";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

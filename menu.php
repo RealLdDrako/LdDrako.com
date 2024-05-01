@@ -32,6 +32,7 @@
                     <a href="#">Events</a>
                     <ul>
                         <li><a href="../pages/OverDrive.php" target="_blank">Overdrive Initiative</a></li>
+                        <li><a href="../pages/missionbuilderform.php" target="_blank">Build a Mission</a></li>
                     </ul>
                 </li>
                 <li><a href="../pages/upload.php" target="_blank">Upload to Around The Verse</a></li>

@@ -9,10 +9,10 @@
 		<meta http-equiv="refresh" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../css/newmission.css" />
-		<script src="../script/upload.js" type="text/javascript"></script>
 	</head>
-	
-	<body>
+<body>
+    
+<button onclick="takeScreenshot()">Save as JPG</button>
 	
 <?php
 
@@ -49,40 +49,41 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 
-$chunks = str_split($missionText, 2400);
+$chunks = str_split($missionText, 2000);
 
 foreach ($chunks as $chunk) {
 ?>
+
 <div class="containerPaper">
+<img src="../images/militaryPaperBalrog.png" style="position:absolute; z-index: -1; min-width: 8.25in;">
     <div class="paper">
-		<div class="watermark">
-        	<h4>Mission Brief</h4>
-    	</div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="missionAttribute">
-            <span class="missionType"><?php echo $missionType; ?> Mission-------></span>
             <h2 class="missionName"><?php echo $missionName; ?></h2>
-            <span class="missionType"><-------<?php echo $missionType; ?> Mission</span>
-        </div>
-        <div class="missionAttribute">
-            <h4>Start Time: <?php echo $startTime; ?>  End Time: <?php echo $endTime; ?></h4>
         </div>
         <div class="missionAttribute">
             <h2><?php echo $location; ?></h2>
         </div>
+        <div class="missionAttribute">
+            <h4>Start Time: <?php echo $startTime; ?><br>
+            End Time: <?php echo $endTime; ?></h4>
+        </div>
         <div class="missionText">
             <p><?php echo $chunk; ?></p>
         </div>
-		<div class="watermark2">
-        	<h4>Mission Brief</h4>
-    	</div>
-    </div>
-    <div class="footer">
-        <h2>LdDrako.com</h2>
-        <p>LdDrako.com™, related images, and products are trademarked by LdDrako™</p>
     </div>
 </div>
 <?php
 }
 ?>
+
+
+<script src="../script/upload.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="../script/newMission.js"></script>
 	</body>
 </html>
