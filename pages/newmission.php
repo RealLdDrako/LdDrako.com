@@ -39,9 +39,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $missionName = $row["missionName"];
     $missionType = $row["missionType"];
-    $startTime = $row["startTime"];
-    $endTime = $row["endTime"];
+    $startTime = formatDate($row["startTime"]);
+    $endTime = formatDate($row["endTime"]);
     $location = $row["location"];
+    $locationMoon = $row["locationMoon"];
     $missionText = $row["missionText"];
   }
 } else {
@@ -65,7 +66,7 @@ foreach ($chunks as $chunk) {
             <h2 class="missionName"><?php echo $missionName; ?></h2>
         </div>
         <div class="missionAttribute">
-            <h2><?php echo $location; ?></h2>
+            <h2><?php echo $locationMoon; ?></h2>
         </div>
         <div class="missionAttribute">
             <h4>Start Time: <?php echo $startTime; ?><br>
@@ -80,10 +81,34 @@ foreach ($chunks as $chunk) {
 }
 ?>
 
-
 <script src="../script/upload.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="../script/newMission.js"></script>
 	</body>
 </html>
+
+<?php
+function formatDate($timestamp) {
+  $date = new DateTime($timestamp, new DateTimeZone('America/New_York')); // Set timezone to Eastern
+
+  $day = $date->format('j'); // Day of the month without leading zeros
+  $month = $date->format('F'); // A full textual representation of a month
+  $year = $date->format('Y'); // A full numeric representation of a year, 4 digits
+  $time = $date->format('gia'); // 12-hour format of an hour with leading zeros, am or pm
+
+  // Add ordinal suffix to day of the month
+  if ($day % 10 == 1 && $day != 11) {
+      $day .= 'st';
+  } elseif ($day % 10 == 2 && $day != 12) {
+      $day .= 'nd';
+  } elseif ($day % 10 == 3 && $day != 13) {
+      $day .= 'rd';
+  } else {
+      $day .= 'th';
+  }
+
+  return "$month $day, $year $time Eastern";
+}
+
+?>

@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="../css/site.css" />
 		<link rel="stylesheet" href="../css/menu.css" />
 		<link rel="stylesheet" href="../css/MusterBriefing.css" />
-		<script src="../script/upload.js" type="text/javascript"></script>
 		<style>
 			body {
 				background-image: url('../images/background_softened_vintage.png');
@@ -59,6 +58,19 @@
 							<!-- Add more options as needed -->
 						</select>
 					</div>
+						<div class="form-group">
+						<label for="location">Location:</label>
+						<br>
+						<select id="location" name="location">
+							<option value="Stanton-->Hurston">Stanton-->Hurston</option>
+							<option value="Stanton-->Crusader">Stanton-->Crusader</option>
+							<option value="Stanton-->ArcCorp">Stanton-->ArcCorp</option>
+							<option value="Stanton-->MicroTech">Stanton-->MicroTech</option>
+							<!-- Add more options as needed -->
+						</select>
+						<select id="locationM" name="locationMoon">
+						</select>
+					</div>
 					<div class="form-group">
 						<label for="startTime">Start Time:</label>
 						<br>
@@ -68,11 +80,6 @@
 						<br>
 						<input type="datetime-local" id="endTime" name="endTime">
 					</div>
-				</div>
-				<div class="form-group">
-					<label for="location">Location:</label>
-					<br>
-					<input type="text" id="location" name="location">
 				</div>
 					<div class="form-group">
 						<label for="missionText">Mission Information:</label>
@@ -86,9 +93,6 @@
 				</form>
 			</div>
 		</div>
-		
-		
-		
 
 			<div class="profile" id="profileCard">
 				<h2>About me</h2>
@@ -131,7 +135,6 @@
 		</div>
 		<script src="../script/aroundTheVerse.js" type="text/javascript"></script>
 		<script src="../script/slideshow.js"></script>
-		<script src="../script/formFullScreen.js"></script>
-		<script src="../script/formMission.js"></script>
+		<script src="../script/missionbuilderform.js"></script>
     </body>
 </html>
