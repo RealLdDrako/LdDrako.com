@@ -15,54 +15,64 @@
 <button onclick="takeScreenshot()">Save as JPG</button>
 	
 <?php
-
-$servername = "localhost";
-$username = "LdDrako";
-$password = "TFSJQEOkkuo?";
-$dbname = "missions";
-
+@include '../../.htpasswds/config.php';
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // Check connection
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
-  } else {
-	echo "";
-  }
+} 
 
 $sql = "SELECT * FROM missions ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    $missionName = $row["missionName"];
-    $missionType = $row["missionType"];
-    $startTime = formatDate($row["startTime"]);
-    $endTime = formatDate($row["endTime"]);
-    $location = $row["location"];
-    $locationMoon = $row["locationMoon"];
-    $missionText = $row["missionText"];
-  }
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+		$orgM = $row["orgMember"];
+		$missionName = $row["missionName"];
+		$missionType = $row["missionType"];
+		$startTime = formatDate($row["startTime"]);
+		$endTime = formatDate($row["endTime"]);
+		$location = $row["location"];
+		$locationMoon = $row["locationMoon"];
+		$missionText = $row["missionText"];
+	}
 } else {
-  echo "0 results";
+	echo "0 results";
 }
 $conn->close();
 
-$chunks = str_split($missionText, 2000);
+$chunks = str_split($missionText, 1500);
+
+// Define the image source based on the value of orgM
+$imageSrc = "";
+switch ($orgM) {
+	case "drako":
+		$imageSrc = "../images/militaryPaperDrako.png";
+		break;
+	case "joker":
+		$imageSrc = "../images/militaryPaperJoker.png";
+		break;
+	case "pharo":
+		$imageSrc = "../images/militaryPaperPharo.png";
+		break;
+	default:
+		$imageSrc = "../images/militaryPaperBalrog.png";
+}
 
 foreach ($chunks as $chunk) {
 ?>
 
 <div class="containerPaper">
-<img src="../images/militaryPaperBalrog.png" style="position:absolute; z-index: -1; min-width: 8.25in;">
+<img src="<?php echo $imageSrc; ?>" style="position:absolute; z-index: -1; min-width: 8.25in;">
     <div class="paper">
         <br>
         <br>
         <br>
         <br>
-        <div class="missionAttribute">
+        <div class="missionNameCSS">
             <h2 class="missionName"><?php echo $missionName; ?></h2>
         </div>
         <div class="missionAttribute">
@@ -73,10 +83,11 @@ foreach ($chunks as $chunk) {
             End Time: <?php echo $endTime; ?></h4>
         </div>
         <div class="missionText">
-            <p><?php echo $chunk; ?></p>
+            <pre><?php echo $chunk; ?></pre>
         </div>
     </div>
 </div>
+
 <?php
 }
 ?>
@@ -90,14 +101,13 @@ foreach ($chunks as $chunk) {
 
 <?php
 function formatDate($timestamp) {
-  $date = new DateTime($timestamp, new DateTimeZone('America/New_York')); // Set timezone to Eastern
+  $date = new DateTime($timestamp, new DateTimeZone('America/New_York'));
 
-  $day = $date->format('j'); // Day of the month without leading zeros
-  $month = $date->format('F'); // A full textual representation of a month
-  $year = $date->format('Y'); // A full numeric representation of a year, 4 digits
-  $time = $date->format('gia'); // 12-hour format of an hour with leading zeros, am or pm
+  $day = $date->format('j');
+  $month = $date->format('F');
+  $year = $date->format('Y');
+  $time = $date->format('g:i a');
 
-  // Add ordinal suffix to day of the month
   if ($day % 10 == 1 && $day != 11) {
       $day .= 'st';
   } elseif ($day % 10 == 2 && $day != 12) {
@@ -112,3 +122,4 @@ function formatDate($timestamp) {
 }
 
 ?>
+

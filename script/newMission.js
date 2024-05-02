@@ -3,7 +3,7 @@ async function takeScreenshot() {
     var missionName = document.querySelector(".missionName").innerText; // assuming missionName is in an element with class 'missionName'
     
     for (let i = 0; i < containers.length; i++) {
-        let canvas = await html2canvas(containers[i], {scale: 1});
+        let canvas = await html2canvas(containers[i], {scale: 6});
         
         // Get the ImageData from the canvas
         var ctx = canvas.getContext('2d');
@@ -36,22 +36,4 @@ async function takeScreenshot() {
         link.href = croppedCanvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
         link.click();
     }
-}
-
-
-async function saveAsPDF() {
-    var containers = document.querySelectorAll(".containerPaper");
-    var pdf = new jsPDF('p', 'mm', 'letter', true);
-    var pdfWidth = pdf.internal.pageSize.getWidth();
-    var pdfHeight = pdf.internal.pageSize.getHeight();
-
-    for (let i = 0; i < containers.length; i++) {
-        if (i !== 0) {
-            pdf.addPage();
-        }
-        let canvas = await html2canvas(containers[i], {scale: 1});
-        let imgData = canvas.toDataURL('image/png');
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    }
-    pdf.save('download.pdf');
 }

@@ -2,8 +2,6 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Stencil;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    text-shadow: 2px 2px 4px black;
 }
 
 .containerPaper {
@@ -21,11 +19,18 @@ body {
 
 }
 
-.missionAttribute {
+.missionNameCSS {
     text-align: center;
     max-width: 7.25in;
     margin: 0 auto;
     color: rgb(255, 0, 0);
+}
+
+.missionAttribute {
+    text-align: center;
+    max-width: 7.25in;
+    margin: 0 auto;
+    color: rgb(8, 71, 18);
 }
 
 .missionText {
@@ -36,8 +41,19 @@ body {
     margin: 0 auto;
 }
 
+.missionText pre {
+    font-family: stencil, sans-serif;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    text-align: inherit;
+    max-width: inherit;
+    min-width: inherit;
+    color: inherit;
+    margin: inherit;
+}
+
 .missionType {
-    font-size: 0.8em; /* Adjust this value to change the size */
+    font-size: 0.8em;
 }
 
 button {

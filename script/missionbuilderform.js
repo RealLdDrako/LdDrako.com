@@ -6,11 +6,8 @@ var locations = {
     "Stanton-->MicroTech": ["-->Calliope", "-->Clio", "-->Euterpe", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"]
 };
 
-// Listen for changes on the location dropdown
-document.getElementById('location').addEventListener('change', function() {
-    // Get the selected location
-    var selectedLocation = this.value;
-
+// Function to populate locationM dropdown
+function populateLocationM(selectedLocation) {
     // Get the locationMoon dropdown
     var locationMoonDropdown = document.getElementById('locationM');
 
@@ -28,4 +25,18 @@ document.getElementById('location').addEventListener('change', function() {
             locationMoonDropdown.appendChild(option);
         });
     }
+}
+
+// Listen for changes on the location dropdown
+document.getElementById('location').addEventListener('change', function() {
+    // Get the selected location
+    var selectedLocation = this.value;
+
+    // Populate locationM dropdown
+    populateLocationM(selectedLocation);
 });
+
+// Populate locationM dropdown with Hurston moons when the page loads
+window.onload = function() {
+    populateLocationM('Stanton-->Hurston');
+};
