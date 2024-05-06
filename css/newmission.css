@@ -1,10 +1,12 @@
 body {
     justify-content: center;
     align-items: center;
-    font-family: Stencil;
+    font-family: 'Black Ops One', 'Courier New', Courier, monospace;
 }
 
 .containerPaper {
+    background-color: rgba(230, 230, 230, 0.131);
+    position: relative;
     align-items: center;
     width: 8.5in;
     min-width: 8.5in;
@@ -28,23 +30,26 @@ body {
 }
 
 .missionAttribute {
-    text-align: center;
-    max-width: 7.25in;
+    text-align: left;
+    max-width: 5.5in;
     margin: 0 auto;
     color: rgb(0, 0, 0);
 }
 
 .missionText {
+    background-color: rgba(230, 230, 230, 0.183);
+    font-family: 'Black Ops One', 'Courier New', Courier, monospace;
     text-align: left;
-    max-width: 5in;
-    min-width: 5in;
+    max-width: 5.5in;
+    min-width: 5.5in;
     color: rgb(0, 0, 0);
     text-shadow: 2px rgb(0, 0, 0);
     margin: 0 auto;
 }
 
 .missionText pre {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: inherit;
+    font-size: 1.1em;
     white-space: pre-wrap;
     word-break: keep-all;
     text-align: inherit;
@@ -60,7 +65,7 @@ body {
 
 button {
     font-family: Stencil;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(1, 46, 0, 0.8);
     color: rgb(255, 255, 255);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-shadow: 2px 2px 4px black;
@@ -72,3 +77,5 @@ button {
         display: none;
     }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');

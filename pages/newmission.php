@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>LdDrako's Den</title>
+		<title>LdDrako's Mission Builder</title>
 		<meta charset="UTF-8" />
 		<meta name="description" content="LdDrako's Den" />
-		<meta name="keywords" content="LdDrako, StarCitizen, Star Citizen" />
+		<meta name="keywords" content="LdDrako, StarCitizen, Star Citizen, Mission Builder" />
 		<meta name="author" content="LdDrako" />
 		<meta http-equiv="refresh" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../css/newmission.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 	</head>
 <body>
     
@@ -44,7 +45,9 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 
-$chunks = str_split($missionText, 1500);
+$missionTextLength = strlen($missionText);
+$numFullPages = floor($missionTextLength / 1200);
+$isLastPageShort = ($missionTextLength % 1200) <= 900;
 
 // Define the image source based on the value of orgM
 $imageSrc = "";
@@ -62,7 +65,10 @@ switch ($orgM) {
 		$imageSrc = "../images/militaryPaperBalrog.png";
 }
 
-foreach ($chunks as $chunk) {
+for ($i = 0; $i <= $numFullPages; $i++) {
+    $isLastPage = ($i == $numFullPages);
+    $chunkSize = ($isLastPage && $isLastPageShort) ? 900 : 1200;
+    $chunk = substr($missionText, $i * 1200, $chunkSize);
 ?>
 
 <div class="containerPaper">
@@ -73,8 +79,12 @@ foreach ($chunks as $chunk) {
         <br>
         <br>
         <div class="missionNameCSS">
-            <h2 class="missionName"><?php echo $missionName; ?></h2>
+            <h1 class="missionName"><?php echo $missionName; ?></h1>
         </div>
+        <div class="missionText">
+            <pre><?php echo $chunk; ?></pre>
+        </div>
+        <?php if ($isLastPage) { ?>
         <div class="missionAttribute">
             <h2><?php echo $locationMoon; ?></h2>
         </div>
@@ -82,9 +92,7 @@ foreach ($chunks as $chunk) {
             <h4>Start Time: <?php echo $startTime; ?><br>
             End Time: <?php echo $endTime; ?></h4>
         </div>
-        <div class="missionText">
-            <pre><?php echo $chunk; ?></pre>
-        </div>
+        <?php } ?>
     </div>
 </div>
 
@@ -122,4 +130,3 @@ function formatDate($timestamp) {
 }
 
 ?>
-
