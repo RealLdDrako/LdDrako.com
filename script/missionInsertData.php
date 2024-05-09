@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO missions (orgMember, missionName, missionType, startTime, endTime, location, locationMoon, missionText) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO missions (orgMember, missionName, missionType, startTime, endTime, location, locationMoon, missionText, dateAdded) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())");
 $stmt->bind_param("ssssssss", $_POST['orgMember'], $_POST['missionName'], $_POST['missionType'], $_POST['startTime'], $_POST['endTime'], $_POST['location'], $_POST['locationMoon'], $_POST['missionText']);
 
 // Execute the statement

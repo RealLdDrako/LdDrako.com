@@ -9,7 +9,6 @@
 		<meta http-equiv="refresh" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../css/newmission.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 	</head>
 <body>
     
@@ -101,9 +100,20 @@ for ($i = 0; $i <= $numFullPages; $i++) {
 ?>
 
 <script src="../script/upload.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
-    <script src="../script/newMission.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../script/newMission.js"></script>
+<script src="../script/newMissionServer.js"></script>
+<script>
+async function takeScreenshot() {
+    // ... your existing code ...
+}
+
+window.onload = function() {
+    takeScreenshot();
+};
+</script>
 	</body>
 </html>
 
