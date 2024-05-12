@@ -12,7 +12,7 @@
 	</head>
 <body>
     
-<button onclick="takeScreenshot()">Save as JPG</button>
+<button onclick="takeScreenshotUser()">Save as JPG</button>
 	
 <?php
 @include '../../.htpasswds/config.php';
@@ -106,10 +106,6 @@ for ($i = 0; $i <= $numFullPages; $i++) {
 <script src="../script/newMission.js"></script>
 <script src="../script/newMissionServer.js"></script>
 <script>
-async function takeScreenshot() {
-    // ... your existing code ...
-}
-
 window.onload = function() {
     takeScreenshot();
 };

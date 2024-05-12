@@ -7,8 +7,12 @@ async function takeScreenshot() {
         return new Date().toISOString().replace(/[^a-zA-Z0-9]/g, '');
     }
 
-    for (let i = 0; i < containers.length; i++) {
-        let canvas = await html2canvas(containers[i], {scale: 6});
+    var pagesArray = [];
+    var filenamesArray = [];
+
+    // Create an array of promises
+    var promises = Array.from(containers).map(async (container, i) => {
+        let canvas = await html2canvas(container, {scale: 6});
         
         // Get the ImageData from the canvas
         var ctx = canvas.getContext('2d');
@@ -38,18 +42,33 @@ async function takeScreenshot() {
         // Convert the cropped canvas to a data URL
         var img = croppedCanvas.toDataURL('image/jpeg');
 
-        // Generate a timestamp
-        var timestamp = new Date().toISOString();
-
         // Save the cropped canvas as an image for the user
         let link = document.createElement('a');
         link.download = missionName + '_pg' + (i + 1) + '_' + getUniqueId() + '.jpg'; // rename the image
         link.href = img;
         link.click();
 
-        // Send the data URL to the server-side script
-        $.post('../script/save_screenshot.php', {data: img, filename: link.download}, function(response) {
-            console.log(response);
-        });
-    }
+        // Add the image to the pagesArray
+        pagesArray.push(img);
+
+        // Add the filename to the filenamesArray
+        var filename = missionName + '_pg' + (i + 1) + '_' + getUniqueId() + '.jpg';
+        filenamesArray.push(filename);
+
+        return filename;
+    });
+
+    // Wait for all promises to resolve
+    await Promise.all(promises);
+
+    // Calculate the pageCount
+    var pageCount = containers.length;
+
+    // Convert the pagesArray and filenamesArray to JSON strings
+    var pagesArrayJson = JSON.stringify(pagesArray);
+    var filenamesArrayJson = JSON.stringify(filenamesArray);
+
+    $.post('../script/updateData.php', {data: pagesArrayJson, filename: filenamesArrayJson, pageCount: pageCount, pagesArray: pagesArrayJson}, function(response) {
+        console.log(response);
+    });
 }

@@ -1,4 +1,4 @@
-async function takeScreenshot() {
+async function takeScreenshotUser() {
     var containers = document.querySelectorAll(".containerPaper");
     var missionName = document.querySelector(".missionName").innerText;
     missionName = missionName.replace(/[^a-zA-Z0-9]/g, '_');
@@ -7,8 +7,11 @@ async function takeScreenshot() {
         return new Date().toISOString().replace(/[^a-zA-Z0-9]/g, '');
     }
 
-    for (let i = 0; i < containers.length; i++) {
-        let canvas = await html2canvas(containers[i], {scale: 6});
+    var pagesArray = []; // Initialize an empty array to store the pages
+
+    let i = 0;
+    for (let container of containers) {
+        let canvas = await html2canvas(container, {scale: 6});
         
         // Get the ImageData from the canvas
         var ctx = canvas.getContext('2d');
@@ -47,9 +50,31 @@ async function takeScreenshot() {
         link.href = img;
         link.click();
 
-        // Send the data URL to the server-side script
-        $.post('../script/save_screenshot.php', {data: img, filename: link.download}, function(response) {
-            console.log(response);
-        });
+        // Add the generated image to the pagesArray
+        pagesArray.push(img);
+
+        i++;
     }
+
+    // Calculate the pageCount
+    var pageCount = containers.length;
+
+    // Convert the pagesArray to a JSON string
+    var pagesArrayJson = JSON.stringify(pagesArray);
+
+    // Send the data to the server-side script
+    $.ajax({
+        url: '../script/save_screenshot.php',
+        type: 'POST',
+        data: {
+            pageCount: pageCount,
+            pagesArray: pagesArrayJson
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error(textStatus, errorThrown);
+        }
+    });
 }
