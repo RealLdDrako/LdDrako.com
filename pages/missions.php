@@ -48,6 +48,24 @@ function getMostRecentFiles($dir, $limit) {
 	<?php include '../menu.php'; ?>
 	</div>
 
+    <?php
+	@include '../../.htpasswds/config.php';
+    // Create connection
+    $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+		// Fetch the record with the highest 'id'
+		$query = $conn->query('SELECT * FROM missions ORDER BY id DESC LIMIT 1');
+		$record = $query->fetch_assoc();
+
+		// Get the 'filenamesArray' from the record
+		$filenamesArray = explode(',', $record['filenamesArray']); // Assuming filenames are comma-separated
+		?>
+
 	<div class="profile">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
