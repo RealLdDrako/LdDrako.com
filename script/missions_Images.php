@@ -1,31 +1,40 @@
 <?php
 header('Content-Type: application/json');
 
-function getMostRecentFiles($dir, $limit) {
-    $files = array_map(function ($file) use ($dir) {
-        return [
-            'file' => $file,
-            'time' => filemtime($dir . '/' . $file)
-        ];
-    }, array_diff(scandir($dir, SCANDIR_SORT_DESCENDING), ['..', '.']));
+@include '../../.htpasswds/config.php';
+// Create connection
+$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-    usort($files, function ($a, $b) {
-        return $b['time'] - $a['time'];
-    });
-
-    return array_slice($files, 0, $limit);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$files = getMostRecentFiles('../images/missions', 10);
+// Fetch the last 6 missions
+$query = $conn->query('SELECT * FROM missions ORDER BY id DESC LIMIT 6');
+$missions = $query->fetch_all(MYSQLI_ASSOC);
 
-// Prepare array to hold the image URLs
-$imageUrls = [];
+// Prepare array to hold the missions and their images
+$missionsArray = [];
 
-foreach ($files as $file) {
-    // Assuming that the 'missions' directory is in the same directory as this script
-    $imageUrls[] = '../images/missions/' . $file['file'];
+foreach ($missions as $mission) {
+    // Get the 'filenamesArray' from the mission
+    $filenamesArray = explode(',', $mission['filenamesArray']); // Assuming filenames are comma-separated
+
+    // Prepare array to hold the image URLs
+    $imageUrls = [];
+
+    foreach ($filenamesArray as $filename) {
+        // Assuming that the 'missions' directory is at the root of your website
+        $imageUrls[] = '/images/missions/' . $filename;
+    }    
+
+    $missionsArray[] = [
+        'missionName' => $mission['missionName'],
+        'images' => $imageUrls
+    ];
 }
 
-// Output the image URLs as a JSON array
-echo json_encode($imageUrls);
+// Output the missions and their images as a JSON array
+echo json_encode($missionsArray);
 ?>
