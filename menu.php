@@ -36,6 +36,7 @@
                 </li>
                 <li><a href="../pages/upload.php" target="_blank">Upload to Around The Verse</a></li>
                 <li><a href="../pages/missionbuilderform.php" target="_blank">Build a Mission</a></li>
+                <li><a href="../pages/missions.php" target="_blank">Current Missions</a></li>
                 <li><a href="../pages/discord.php" target="_blank">Discord</a></li>
             </ul>
         </li>
