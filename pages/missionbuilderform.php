@@ -96,6 +96,6 @@
 		<script src="../script/aroundTheVerse.js" type="text/javascript"></script>
 		<script src="../script/slideshow.js"></script>
 		<script src="../script/missionbuilderform.js"></script>
-		<script src="../script/newMission.js"></script>
+		<script src="../script/newMissionServer.js"></script>
     </body>
 </html>

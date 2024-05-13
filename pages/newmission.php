@@ -12,7 +12,7 @@
 	</head>
 <body>
     
-<button onclick="takeScreenshotUser()">Save as JPG</button>
+<button id="saveButton" onclick="takeScreenshotUser()">Save as JPG</button>
 	
 <?php
 @include '../../.htpasswds/config.php';
@@ -99,15 +99,18 @@ for ($i = 0; $i <= $numFullPages; $i++) {
 }
 ?>
 
-<script src="../script/upload.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../script/newMission.js"></script>
 <script src="../script/newMissionServer.js"></script>
+<script src="../script/newMission.js"></script>
 <script>
 window.onload = function() {
     takeScreenshot();
+};
+
+document.getElementById("saveButton").onclick = function() {
+    takeScreenshotUser();
 };
 </script>
 	</body>

@@ -1,9 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 @include '../../.htpasswds/config.php';
 // Create connection
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -33,5 +28,27 @@ if ($stmt->execute()) {
 
 // Close statement and connection
 $stmt->close();
-$conn->close();
+
+// Check if file was uploaded
+if(isset($_FILES['image'])){
+    $errors= array();
+    $file_name = $_FILES['image']['name'];
+    $file_size = $_FILES['image']['size'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $file_type = $_FILES['image']['type'];
+    $file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
+      
+    $extensions= array("jpeg","jpg","png");
+      
+    if(in_array($file_ext,$extensions)=== false){
+        $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+    }
+      
+    if(empty($errors)==true){
+        move_uploaded_file($file_tmp,"../images/missions/".$file_name);
+        echo "Success";
+    }else{
+        print_r($errors);
+    }
+}
 ?>

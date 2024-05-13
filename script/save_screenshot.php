@@ -16,23 +16,4 @@ if (isset($_POST['data']) && isset($_POST['filename'])) {
 } else {
     echo 'No data or filename provided.';
 }
-
-if (isset($_POST['pageCount']) && isset($_POST['pagesArray'])) {
-    // Get the pageCount and pagesArray from the post request
-    $pageCount = $_POST['pageCount'];
-    $pagesArray = json_decode($_POST['pagesArray'], true);
-
-    // Prepare an SQL statement
-    $stmt = $conn->prepare("UPDATE missions SET pageCount = ?, pagesArray = ? WHERE id = ?");
-
-    // Bind the pageCount, pagesArray, and id to the SQL statement
-    $stmt->bind_param("isi", $pageCount, json_encode($pagesArray), $id);
-
-    // Execute the statement
-    if ($stmt->execute()) {
-        echo 'Data updated successfully.';
-    } else {
-        echo 'Error: ' . $stmt->error;
-    }
-}
 ?>

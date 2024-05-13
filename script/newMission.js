@@ -61,20 +61,4 @@ async function takeScreenshotUser() {
 
     // Convert the pagesArray to a JSON string
     var pagesArrayJson = JSON.stringify(pagesArray);
-
-    // Send the data to the server-side script
-    $.ajax({
-        url: '../script/save_screenshot.php',
-        type: 'POST',
-        data: {
-            pageCount: pageCount,
-            pagesArray: pagesArrayJson
-        },
-        success: function(response) {
-            console.log(response);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.error(textStatus, errorThrown);
-        }
-    });
 }

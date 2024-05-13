@@ -42,18 +42,40 @@ async function takeScreenshot() {
         // Convert the cropped canvas to a data URL
         var img = croppedCanvas.toDataURL('image/jpeg');
 
-        // Save the cropped canvas as an image for the user
-        let link = document.createElement('a');
-        link.download = missionName + '_pg' + (i + 1) + '_' + getUniqueId() + '.jpg'; // rename the image
-        link.href = img;
-        link.click();
-
         // Add the image to the pagesArray
         pagesArray.push(img);
 
         // Add the filename to the filenamesArray
         var filename = missionName + '_pg' + (i + 1) + '_' + getUniqueId() + '.jpg';
         filenamesArray.push(filename);
+
+        // Convert the base64 image data to a Blob
+        var byteString = atob(img.split(',')[1]);
+        var mimeString = img.split(',')[0].split(':')[1].split(';')[0]
+        var ab = new ArrayBuffer(byteString.length);
+        var ia = new Uint8Array(ab);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        var blob = new Blob([ab], {type: mimeString});
+
+        // Create a new FormData instance
+        var formData = new FormData();
+
+        // Add the Blob and the filename to the FormData
+        formData.append('image', blob, filename);
+
+        // Send the FormData to the server
+        $.ajax({
+            url: '../script/updateData.php',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log(response);
+            }
+        });
 
         return filename;
     });
