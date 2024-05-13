@@ -100,5 +100,33 @@ function getMostRecentFiles($dir, $limit) {
 		<h2>LdDrako.com</h2>
 		<p>LdDrako.com™, related images, and products are trademarked by LdDrako™</p>
 	</div>
+    <script>
+// This function fetches the latest images and updates the carousel
+function updateCarousel() {
+    $.ajax({
+        url: 'missions_Images.php', // The URL of the PHP script that fetches the latest images
+        method: 'GET',
+        success: function(data) {
+            // data should be an array of image URLs
+            var carouselInner = $('.carousel-inner');
+            carouselInner.empty(); // Remove old slides
+
+            data.forEach(function(url, index) {
+                var activeClass = index === 0 ? ' active' : '';
+                var newSlide = '<div class="carousel-item' + activeClass + '">' +
+                               '<img class="d-block w-100" src="' + url + '" alt="Slide ' + (index + 1) + '">' +
+                               '</div>';
+                carouselInner.append(newSlide); // Add new slide
+            });
+        }
+    });
+}
+
+// Call updateCarousel every 5 seconds
+setInterval(updateCarousel, 5000);
+</script>
+</body>
+</html>
+
 </body>
 </html>
