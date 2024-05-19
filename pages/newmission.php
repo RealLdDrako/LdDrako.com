@@ -68,6 +68,7 @@ for ($i = 0; $i <= $numFullPages; $i++) {
     $isLastPage = ($i == $numFullPages);
     $chunkSize = ($isLastPage && $isLastPageShort) ? 900 : 1200;
     $chunk = substr($missionText, $i * 1200, $chunkSize);
+    $missionTextClass = $isLastPage ? "missionTextLast" : "missionText";
 ?>
 
 <div class="containerPaper">
@@ -80,7 +81,7 @@ for ($i = 0; $i <= $numFullPages; $i++) {
         <div class="missionNameCSS">
             <h1 class="missionName"><?php echo $missionName; ?></h1>
         </div>
-        <div class="missionText">
+        <div class="<?php echo $missionTextClass; ?>">
             <pre><?php echo $chunk; ?></pre>
         </div>
         <?php if ($isLastPage) { ?>

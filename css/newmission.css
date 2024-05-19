@@ -1,15 +1,16 @@
 body {
     justify-content: center;
     align-items: center;
-    font-family: 'Black Ops One', 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .containerPaper {
-    background-color: rgba(230, 230, 230, 0.131);
+    background-color: rgba(230, 230, 230, 0.183);
     position: relative;
     align-items: center;
-    width: 8.5in;
-    min-width: 8.5in;
+    width: 8.25in;
+    min-width: 8.25in;
+    max-width: 8.25in;
     min-height: 11in;
     max-height: 11in;
     page-break-after: always;
@@ -18,12 +19,13 @@ body {
 .paper {
     text-align: left;
     min-width: 8in;
-
 }
 
 .missionNameCSS {
     text-align: center;
-    max-width: 7.25in;
+    max-width: 6.25in;
+    min-width: 6.25;
+    width: 6.25;
     margin: 0 auto;
     color: rgb(0, 0, 0);
     font-size: plus .5;
@@ -31,23 +33,54 @@ body {
 
 .missionAttribute {
     text-align: left;
-    max-width: 5.5in;
+    max-width: 6.25in;
     margin: 0 auto;
     color: rgb(0, 0, 0);
 }
 
 .missionText {
-    background-color: rgba(230, 230, 230, 0.183);
+    background-color: rgba(230, 230, 230, 0.050);
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
-    max-width: 5.5in;
-    min-width: 5.5in;
+    max-width: 6.125in;
+    min-width: 6.125in;
+    min-height: 7.75in;
+    max-height: 7.75in;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px rgb(216, 216, 216);
+    margin: auto;
+    padding-left: 0.25in;
+    padding-right: 0.25in;
+}
+
+.missionTextLast {
+    background-color: rgba(230, 230, 230, 0.050);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    max-width: 6.125in;
+    min-width: 6.125in;
+    min-height: 6.25in;
+    max-height: 6.25in;
     color: rgb(0, 0, 0);
     text-shadow: 2px rgb(0, 0, 0);
-    margin: 0 auto;
+    margin: auto;
+    padding-left: 0.25in;
+    padding-right: 0.25in;
 }
 
 .missionText pre {
+    font-family: inherit;
+    font-size: 1.1em;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    text-align: inherit;
+    max-width: inherit;
+    min-width: inherit;
+    color: inherit;
+    margin: inherit;
+}
+
+.missionTextLast pre {
     font-family: inherit;
     font-size: 1.1em;
     white-space: pre-wrap;
