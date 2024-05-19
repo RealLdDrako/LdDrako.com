@@ -1,9 +1,9 @@
 // Define your data
 var locations = {
-    "Stanton-->Hurston": ["-->Arial", "-->Aberdeen", "-->Magda", "-->Ita", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"],
-    "Stanton-->Crusader": ["-->Cellin", "-->Daymar", "-->Yela", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"],
-    "Stanton-->ArcCorp": ["-->Lyria", "-->Wala", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"],
-    "Stanton-->MicroTech": ["-->Calliope", "-->Clio", "-->Euterpe", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"]
+    "Stanton-->Hurston": ["-->Everus Harbor", "-->Arial", "-->Aberdeen", "-->Magda", "-->Ita", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"],
+    "Stanton-->Crusader": ["-->Seraphim", "-->Cellin", "-->Daymar", "-->Yela", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"],
+    "Stanton-->ArcCorp": ["-->Bajini Point", "-->Lyria", "-->Wala", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"],
+    "Stanton-->MicroTech": ["-->Port Tressler", "-->Calliope", "-->Clio", "-->Euterpe", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"]
 };
 
 // Function to populate locationM dropdown
