@@ -21,6 +21,11 @@ body {
     min-width: 8in;
 }
 
+.paperContract {
+    text-align: left;
+    min-width: 8in;
+}
+
 .missionNameCSS {
     text-align: center;
     max-width: 6.25in;
@@ -81,6 +86,77 @@ body {
 }
 
 .missionTextLast pre {
+    font-family: inherit;
+    font-size: 1.1em;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    text-align: inherit;
+    max-width: inherit;
+    min-width: inherit;
+    color: inherit;
+    margin: inherit;
+}
+
+.contractNameCSS {
+    text-align: center;
+    max-width: 6.25in;
+    min-width: 6.25;
+    width: 6.25;
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+    font-size: plus .5;
+}
+
+.contractAttribute {
+    text-align: left;
+    max-width: 6.25in;
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+}
+
+.contractText {
+    background-color: rgba(230, 230, 230, 0.050);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    max-width: 6.125in;
+    min-width: 6.125in;
+    min-height: 7in;
+    max-height: 7in;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px rgb(216, 216, 216);
+    margin: auto;
+    padding-left: 0.25in;
+    padding-right: 0.25in;
+}
+
+.contractTextLast {
+    background-color: rgba(230, 230, 230, 0.050);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    max-width: 6.125in;
+    min-width: 6.125in;
+    min-height: 5.75in;
+    max-height: 5.75in;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px rgb(0, 0, 0);
+    margin: auto;
+    padding-left: 0.25in;
+    padding-right: 0.25in;
+}
+
+.contractText pre {
+    font-family: inherit;
+    font-size: 1.1em;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    text-align: inherit;
+    max-width: inherit;
+    min-width: inherit;
+    color: inherit;
+    margin: inherit;
+}
+
+.contractTextLast pre {
     font-family: inherit;
     font-size: 1.1em;
     white-space: pre-wrap;

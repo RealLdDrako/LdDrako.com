@@ -6,6 +6,16 @@ var locations = {
     "Stanton-->MicroTech": ["-->Port Tressler", "-->Calliope", "-->Clio", "-->Euterpe", "-->L1", "-->L2", "-->L3", "-->L4", "-->L5"]
 };
 
+// Function to change whether the 'PlayerTag' shows or not
+function checkContractType(selectObj) {
+    var playerTagDiv = document.getElementById('playerTagDiv');
+    if (selectObj.value == 'Assasination') {
+        playerTagDiv.style.display = 'block';
+    } else {
+        playerTagDiv.style.display = 'none';
+    }
+}
+
 // Function to populate locationM dropdown
 function populateLocationM(selectedLocation) {
     // Get the locationMoon dropdown
@@ -40,21 +50,21 @@ document.getElementById('location').addEventListener('change', function() {
 window.onload = function() {
     populateLocationM('Stanton-->Hurston');
 
-    // Get current date and time
-    var now = new Date();
+// Get current date and time
+var now = new Date();
 
-    // Format date and time
-    var year = now.getFullYear();
-    var month = ("0" + (now.getMonth() + 1)).slice(-2);
-    var day = ("0" + now.getDate()).slice(-2);
-    var hours = ("0" + now.getHours()).slice(-2);
-    var minutes = ("0" + now.getMinutes()).slice(-2);
+// Format date and time
+var year = now.getFullYear();
+var month = ("0" + (now.getMonth() + 1)).slice(-2);
+var day = ("0" + now.getDate()).slice(-2);
+var hours = ("0" + now.getHours()).slice(-2);
+var minutes = ("0" + now.getMinutes()).slice(-2);
 
-    var date = year + "-" + month + "-" + day;
-    var time = hours + ":" + minutes;
+var date = year + "-" + month + "-" + day;
+var time = hours + ":" + minutes;
 
-    // Set 'startTime' and 'endTime' to current date and time
-    document.getElementById('startTime').value = date + "T" + time;
-    document.getElementById('endTime').value = date + "T" + time;
+// Set 'startTime' and 'endTime' to current date and time
+document.getElementById('startTime').value = date + "T" + time;
+document.getElementById('endTime').value = date + "T" + time;
 };
 
