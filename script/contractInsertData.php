@@ -9,8 +9,8 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO contracts (orgMember, contractName, contractType, location, locationMoon, startTime, endTime, contractText, contractReward, dateAdded) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-$stmt->bind_param("ssssssssi", $_POST['orgMember'], $_POST['contractName'], $_POST['contractType'], $_POST['location'], $_POST['locationMoon'], $_POST['startTime'], $_POST['endTime'], $_POST['contractText'], $_POST['contractReward']);
+$stmt = $conn->prepare("INSERT INTO contracts (orgMember, contractOwner, contractName, contractType, location, locationMoon, startTime, endTime, contractText, contractReward, dateAdded) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+$stmt->bind_param("sssssssssi", $_POST['orgMember'], $_POST['contractOwner'], $_POST['contractName'], $_POST['contractType'], $_POST['location'], $_POST['locationMoon'], $_POST['startTime'], $_POST['endTime'], $_POST['contractText'], $_POST['contractReward']);
 
 // Execute the statement
 if ($stmt->execute()) {

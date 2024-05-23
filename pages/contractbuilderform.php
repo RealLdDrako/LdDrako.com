@@ -40,6 +40,12 @@
 				</select>
 			</div>
 			<div class="form-group">
+				<label for="contractOwner">Contract Owner:</label>
+				<br>
+				<input type="text" id="contractOwner" name="contractOwner" placeholder="Who is making the contract">
+				</div>
+			<div class="form-group">
+			<div class="form-group">
 				<label for="contractName">Contract Name:</label>
 				<br>
 				<input type="text" id="contractName" name="contractName">
@@ -48,7 +54,7 @@
 				<label for="contractType">Contract Type:</label>
 				<br>
 				<select id="contractType" name="contractType" onchange="checkContractType(this)">
-					<option value="Assasination">Assasination</option>
+					<option value="Assasination">Assassination</option>
 					<option value="Mercenary">Mercenary</option>
 					<option value="Escort">Escort</option>
 					<option value="Cargo">Cargo</option>
@@ -58,9 +64,9 @@
 					<option value="Purchase">Purchase</option>
 				</select>
 			<div id="playerTagDiv" style="display: block;" class="form-group">
-				<label for="playerTag">Player Tag:</label>
+				<label for="playerTag">Target's Name:</label>
 				<br>
-				<input type="text" id="playerTag" name="playerTag">
+				<input type="text" id="playerTag" name="playerTag" placeholder="Who do you want Assassinated">
 			</div>
 			</div>
 			<div class="form-group">
@@ -69,7 +75,7 @@
     			<input type="number" id="contractReward" name="contractReward" min="0">
 			</div>
 			<div class="form-group">
-				<label for="location">Location:</label>
+				<label for="location">Location: Likely hiding at</label>
 				<br>
 				<select id="location" name="location">
 					<option value="Stanton-->Hurston">Stanton-->Hurston</option>
@@ -92,7 +98,7 @@
 			<div class="form-group">
 				<label for="contractText">Contract Information:</label>
 				<br>
-				<textarea id="contractText" name="contractText" rows="20"></textarea>
+				<textarea id="contractText" name="contractText" rows="20" placeholder="Give us more information on the contract."></textarea>
 			</div>
 			<br>
 			<div class="form-group">

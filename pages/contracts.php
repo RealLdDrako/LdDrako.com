@@ -53,6 +53,9 @@ foreach ($contracts as $contract) {
     $contractName = $contract['contractName'];
     $filenamesArray = explode(',', $contract['filenamesArray']); // Assuming filenames are comma-separated
 
+    // Sort the filenames
+    sort($filenamesArray);
+
     // Prepare array to hold the image URLs
     $imageUrls = [];
 
@@ -66,11 +69,11 @@ foreach ($contracts as $contract) {
     ?>
 
 <div class="profile">
-        <h2><?php echo $missionName; ?></h2>
-        <div id="carousel<?php echo $missionIndex; ?>" class="carousel slide">
+        <h2><?php echo $contractName; ?></h2> <!-- Use $contractName instead of $missionName -->
+        <div id="carousel<?php echo $contractIndex; ?>" class="carousel slide">
             <ol class="carousel-indicators">
                 <?php foreach ($imageUrls as $index => $imageUrl) { ?>
-                    <li data-target="#carousel<?php echo $missionIndex; ?>" data-slide-to="<?php echo $index; ?>"<?php echo $index === 0 ? ' class="active"' : ''; ?>></li>
+                    <li data-target="#carousel<?php echo $contractIndex; ?>" data-slide-to="<?php echo $index; ?>"<?php echo $index === 0 ? ' class="active"' : ''; ?>></li>
                 <?php } ?>
             </ol>
             <div class="carousel-inner">
@@ -80,11 +83,11 @@ foreach ($contracts as $contract) {
                     </div>
                 <?php } ?>
             </div>
-            <a class="carousel-control-prev" href="#carousel<?php echo $missionIndex; ?>" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carousel<?php echo $contractIndex; ?>" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carousel<?php echo $missionIndex; ?>" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carousel<?php echo $contractIndex; ?>" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -92,8 +95,8 @@ foreach ($contracts as $contract) {
     </div>
 
 <?php
-    $missionIndex++; // Increment the mission index after each loop
-    }
+    $contractIndex++; // Increment the contract index after each loop
+}
 ?>
 
 <div class="footer">

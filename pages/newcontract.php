@@ -39,6 +39,7 @@ if ($result->num_rows > 0) {
 		$locationMoon = $row["locationMoon"];
 		$contractText = $row["contractText"];
         $contractReward = $row["contractReward"];
+        $contractOwner = $row["contractOwner"];
 	}
 } else {
 	echo "0 results";
@@ -88,11 +89,10 @@ for ($i = 0; $i <= $numFullPages; $i++) {
         </div>
         <?php if ($isLastPage) { ?>
         <div class="contractAttribute">
-            <h2><?php echo $locationMoon; ?></h2>
-        </div>
-        <div class="contractAttribute">
-            <h4>Start Time: <?php echo $startTime; ?><br>
-            End Time: <?php echo $endTime; ?></h4>
+            <h4><?php echo $locationMoon; ?><BR>
+            Start Time: <?php echo $startTime; ?><br>
+            End Time: <?php echo $endTime; ?><br>
+            Contract Owner: <?php echo $contractOwner; ?></h4>
         </div>
         <?php } ?>
     </div>

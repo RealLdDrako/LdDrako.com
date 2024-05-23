@@ -34,9 +34,21 @@
                         <li><a href="../pages/OverDrive.php" target="_blank">Overdrive Initiative</a></li>
                     </ul>
                 </li>
+                <li class="subnav">
+                    <a href="#">Missions</a>
+                    <ul>
+                        <li><a href="../pages/missionbuilderform.php" target="_blank">Mission Builder</a></li>
+                        <li><a href="../pages/missions.php" target="_blank">Current Missions</a></li>
+                    </ul>
+                </li>
+                <li class="subnav">
+                    <a href="#">Contracts</a>
+                    <ul>
+                        <li><a href="../pages/contractbuilderform.php" target="_blank">Contract Builder</a></li>
+                        <li><a href="../pages/contracts.php" target="_blank">Current Contracts</a></li>
+                    </ul>
+                </li>
                 <li><a href="../pages/upload.php" target="_blank">Upload to Around The Verse</a></li>
-                <li><a href="../pages/missionbuilderform.php" target="_blank">Build a Mission</a></li>
-                <li><a href="../pages/missions.php" target="_blank">Current Missions</a></li>
                 <li><a href="../pages/discord.php" target="_blank">Discord</a></li>
             </ul>
         </li>

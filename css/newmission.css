@@ -180,6 +180,9 @@ button {
     text-shadow: 2px 2px 4px black;
 }
 
+#contractOwner::placeholder {
+    font-size: 0.7em; /* Adjust as needed */
+}
 
 @media print {
     button {
