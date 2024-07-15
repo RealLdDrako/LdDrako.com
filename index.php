@@ -33,10 +33,9 @@
 			<h style="font-size: 450%;">LdDrako's Den</h>
 			<p>
                 Welcome to LdDrako's Den. Here you will find useful links, tools and videos relating to Star Citizen. 
-				I'm sure you will find them useful. If you have
-                any suggestions or additions, please contact me at <a href="mailto:RealLdDrako@gmail.com">LdDrako</a>
+				I'm sure you will find them useful.
             </p>
-            <p>You can also follow the Den's<a href="pages/discord.html" target="_blank">Discord</a>.</p>
+			<h3>If you wish to join LdDrako's Den, <a href="https://discord.gg/c5EFbyZ527" target="_blank"> Join Today!</a>.</h3>
 		</div>
 
 		<div class="centered">
