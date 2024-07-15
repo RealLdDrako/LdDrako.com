@@ -1,5 +1,5 @@
 <?php
-@include '../../.htpasswds/config.php';
+@include 'config.php';
 // Create connection
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
